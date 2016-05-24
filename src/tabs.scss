@@ -1,0 +1,90 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px/1.4 'Open Sans', sans-serif;
+  color: #555;
+}
+
+.main {
+  min-width: 320px;
+  max-width: 800px;
+  padding: 25px 50px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+h1 {
+  padding: 40px 0;
+  font-weight: 400;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 0 0 23px 0;
+}
+
+
+.tbs--nav {
+
+  /* micro clearfix hack */
+  &:after,
+  &:before {
+    display: table;
+    content: " ";
+  }
+
+  &:after {
+    clear: both;
+  }
+
+}
+
+
+.tbs--nav--item {
+  float: left;
+  margin-bottom: -1px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.tbs--nav--link {
+  display: block;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #bbb;
+  border-top: 2px solid transparent;
+
+  &:hover {
+    color: #888;
+  }
+}
+
+.tbs--nav--item.is-selected {
+}
+
+.tbs--nav--item.is-selected .tbs--nav--link {
+  background: #fff;
+  color: #555;
+  border: 1px solid #e6e6e6;
+  border-top: 2px solid orange;
+  border-bottom-color: #fff;
+}
+
+.tbs--panel {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #e6e6e6;
+}
+
+.tbs--panel.is-selected {
+  display: block !important;
+}
