@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { Tab, Tabs, TabList, TabPanel } from '../src';
+import { Tab, Tabs, TabList, TabPanel } from '../build/react-tabs';
 
 import '../src/tabs.scss';
 

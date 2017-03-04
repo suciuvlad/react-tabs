@@ -2,11 +2,22 @@ var webpack = require('webpack');
 
 module.exports = {
   devtool: 'source-map',
-  entry: __dirname + "/src/index.js",
+  entry: {
+    'react-tabs': __dirname + "/index.js",
+    'react-tabs.min': __dirname + "/index.js",
+  },
+
   output: {
     path: __dirname + "/build",
-    filename: "react-tabs.min.js"
+    libraryTarget: 'umd',
+    filename: "[name].js"
   },
+
+  externals: [
+    'classnames',
+    'react',
+    'react-dom'
+  ],
 
   module: {
     loaders: [
@@ -21,7 +32,11 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      minimize: true
+      include: /\.min\.js$/,
+      minimize: true,
+      compress: {
+        warnings: false
+      }
     })
   ]
 }
